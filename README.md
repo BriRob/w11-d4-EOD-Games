@@ -42,6 +42,10 @@ If a user is deleted, all games associated with the user are deleted
 
 Migrate tables to DB
 
+npx sequelize model:generate --name User --attributes username:string,password:string,age:integer
+
+npx sequelize model:generate --name Game --attributes userId:integer,name:string,category:string,description:string,numOfPlayers:integer
+
 ![Users-Games-Schema](Users-Games-Schema.png)
 
 ### 2. Make seeders for Users and Games
@@ -50,6 +54,8 @@ Migrate tables to DB
 - Add 4 games and associate them with users
 - Don't forget to validate!
 
+npx sequelize seed:generate --name a-few-users
+npx sequelize seed:generate --name a-few-games
 
 ### 3. Communicate with DB through Express
 `npm run dev`
